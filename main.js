@@ -1,16 +1,17 @@
 const player1 = {
     name: 'SCORPION',
-    hp: 100,
+    hp: 70,
     img: 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif',
     weapon: ['spear', 'dagger', 'sword'],
     attack: function () {
-        return console.log('SCORPION' + 'fight...');
+        console.log(this.name + '' + 'fight...');
     }
 };
 
+
 const player2 = {
     name: 'SUB-ZERO',
-    hp: 100,
+    hp: 50,
     img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif',
     weapon: ['spear', 'dagger', 'sword'],
     attack: function () {
@@ -29,8 +30,9 @@ function createPlayer(player, person) {
 
     const $life = document.createElement('div');
     $life.classList.add('life');
-    $life.style.width = '100%';
-    $life.style.width = 'person.hp';
+    // $life.style.width = '100%';
+    $life.style.width = person.hp + '%';
+    console.log(person.hp);
 
     const $name = document.createElement('div');
     $name.classList.add('name');
